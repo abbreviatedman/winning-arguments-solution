@@ -24,3 +24,11 @@ const seanBeanShows = [
   'Clarissa',
   'The Practice',
 ]
+
+// push a new movie in
+// push a new show in
+// print a show or movie
+// return the truncated version of a movie
+// Go through every movie and print out the truncated version.
+// 
+// Go through any list and print every show/movie

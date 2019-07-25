@@ -26,9 +26,88 @@ const seanBeanShows = [
 ]
 
 // push a new movie in
+
+function addMovie(movie) {
+  seanBeanMovies.unshift(movie);
+}
+
 // push a new show in
+
+function addShow(show) {
+  seanBeanShows.unshift(show);
+}
+
 // print a show or movie
-// return the truncated version of a movie
-// Go through every movie and print out the truncated version.
-// 
+
+function print(appearance) {
+  console.log(appearance);
+}
+
 // Go through any list and print every show/movie
+
+function printList(list) {
+  let i = 0;
+  while (i < list.length) {
+    print(list[i]);
+    i = i + 1;
+  }
+}
+
+// Take a true or false for alphabetical.
+
+function printListIntermediate(list, alphabetical) {
+  const newList = list.slice();
+  if (alphabetical === true) {
+    newList.sort();
+  }
+
+  let i = 0;
+  while (i < newList.length) {
+    print(newList[i]);
+    i = i + 1;
+  }
+}
+
+// Take a true or false for reverse.
+
+function printListAdvanced(list, alphabetical, reverse) {
+  const newList = list.slice();
+
+  if (alphabetical === true) {
+    newList.sort();
+  }
+
+  if (reverse === true) {
+    let i = newList.length - 1;
+    while (i >= 0) {
+      print(newList[i]);
+      i = i - 1;
+    }
+  } else {
+    let i = 0;
+    while (i < newList.length) {
+      print(newList[i]);
+      i = i + 1;
+    }
+  }
+
+  /*
+    Alternate, simpler one using `.reverse()`.
+
+    const newList = list.slice();
+
+    if (alphabetical === true) {
+      newList.sort();
+    }
+
+    if (reverse === true) {
+      newList.reverse();
+    }
+
+    let i = 0;
+    while (i < newList.length) {
+      print(newList[i]);
+      i = i + 1;
+    }
+  */
+}

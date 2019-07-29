@@ -58,6 +58,7 @@ function printList(list) {
 function printListIntermediate(list, alphabetical) {
   const newList = list.slice();
   if (alphabetical === true) {
+    removeTheTheFromStart(newList);
     newList.sort();
   }
 
@@ -74,6 +75,7 @@ function printListAdvanced(list, alphabetical, reverse) {
   const newList = list.slice();
 
   if (alphabetical === true) {
+    removeTheTheFromStart(newList);
     newList.sort();
   }
 
@@ -91,12 +93,38 @@ function printListAdvanced(list, alphabetical, reverse) {
     }
   }
 
+  function removeTheTheFromStart(arr) {
+    const beginningThe = 'The ';
+    let i = 0;
+    
+    while (i < arr.length) {
+      const title = arr[i];
+      if (title.startsWith(beginningThe)) {
+        arr[i] = title.slice(4) + ', the';
+      }
+
+      i = i + 1;
+    }
+  }
+
   /*
     Alternate, simpler one using `.reverse()`.
 
     const newList = list.slice();
 
     if (alphabetical === true) {
+      const beginningThe = 'The ';
+      const title = newList[i];
+      let i = 0;
+      
+      while (i < newList.length) {
+        if (title.startsWith(beginningThe)) {
+          newList[i] = title.slice(4) + ', the';
+        }
+
+        i = i + 1;
+      }
+
       newList.sort();
     }
 
